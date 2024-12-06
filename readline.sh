@@ -22,9 +22,15 @@ if [ "$withhistfile" ]; then
 else
     HISTOPT=
 fi
-mkdir -p /tmp/$USER || exit 1
 #
 #
 
-exec socat -d readline"$HISTOPT",noecho='[Pp]assword:' exec:"$PROGRAM",sigint,pty,setsid,ctty,raw,echo=0,stderr 2>/tmp/$USER/stderr2
+if test -w .; then
+    STDERR=./socat-readline.${1##*/}.log
+    rm -f $STDERR
+else
+    STDERR=/dev/null
+fi
+
+exec socat -d readline"$HISTOPT",noecho='[Pp]assword:' exec:"$PROGRAM",sigint,pty,setsid,ctty,raw,echo=0,stderr 2>$STDERR
 

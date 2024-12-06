@@ -1,4 +1,21 @@
 ﻿
+####################### V 1.8.0.2:
+
+Security:
+	Socat security advisory 9
+	CVE-2024-54661: Arbitrary file overwrite
+	Socat 1.6.0.0 through 1.8.0.1 and version 2 distributions contain a
+	wrapper script "readline.sh" that uses a predictable temporary
+	directory, allowing unprivileged users to overwrite arbitrary files
+	belonging to the scripts caller.
+	This is fixed in Version 1.8.0.2
+	Mitigating factors: readline.sh is usually neither installed in a bin
+	directory nor is it documented. Major Linux distributions install it in
+	examples/ or doc/; however it is invoked by test.sh script.
+	Thanks to Wolfgang Frisch from SuSE for finding and reporting this
+	issue.
+	Test: READLINE_SH_OVERWRITE
+
 ####################### V 1.8.0.1:
 
 Corrections:
