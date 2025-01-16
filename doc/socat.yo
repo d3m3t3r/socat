@@ -880,6 +880,7 @@ label(ADDRESS_SCTP_CONNECT)dit(bf(tt(SCTP-CONNECT:<host>:<port>)))
    link(connect-timeout)(OPTION_CONNECT_TIMEOUT),
    link(tos)(OPTION_TOS),
    link(mtudiscover)(OPTION_MTUDISCOVER),
+   link(mtudiscover6)(OPTION_MTUDISCOVER6),
    link(sctp-maxseg)(OPTION_SCTP_MAXSEG),
    link(sctp-nodelay)(OPTION_SCTP_NODELAY),
    link(nonblock)(OPTION_NONBLOCK),
@@ -1231,6 +1232,7 @@ label(ADDRESS_TCP_CONNECT)dit(bf(tt(TCP:<host>:<port>)))
    link(pf)(OPTION_PROTOCOL_FAMILY),
    link(tos)(OPTION_TOS),
    link(mtudiscover)(OPTION_MTUDISCOVER),
+   link(mtudiscover6)(OPTION_MTUDISCOVER6),
    link(mss)(OPTION_MSS),
    link(nodelay)(OPTION_TCP_NODELAY),
    link(nonblock)(OPTION_NONBLOCK),
@@ -2446,8 +2448,11 @@ COMMENT(   x00 end of option list
    x0804 stream ID
    x44 internet timestamp)
 label(OPTION_MTUDISCOVER)dit(bf(tt(mtudiscover=<0|1|2>)))
-   Takes 0, 1, 2 to never, want, or always use path MTU discover on this
+   Takes 0, 1, 2 to never, want, or always use path MTU discover on the IPv4
    socket. 
+label(OPTION_MTUDISCOVER6)dit(bf(tt(mtudiscover6=<0|1|2>)))
+   Takes 0, 1, 2 to never, want, or always use path MTU discover on the IPv6
+   socket.
 COMMENT(label(OPTION_HRDINCL)dit(bf(tt(ip-hdrincl)))
    Tell the raw socket that the application data includes the IP header.)
 COMMENT(label(OPTION_IP_MULTICAST_LOOP)dit(bf(tt(ip-multicastloop)))

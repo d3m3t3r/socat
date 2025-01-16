@@ -766,6 +766,9 @@ const struct optname optionnames[] = {
 #ifdef IP_MTU_DISCOVER
 	IF_IP     ("ip-mtu-discover",	&opt_ip_mtu_discover)
 #endif
+#ifdef IPV6_MTU_DISCOVER
+	IF_IP     ("ipv6-mtu-discover",	&opt_ipv6_mtu_discover)
+#endif
 	IF_IP     ("ip-multicast-if",	&opt_ip_multicast_if)
 	IF_IP     ("ip-multicast-loop",	&opt_ip_multicast_loop)
 	IF_IP     ("ip-multicast-ttl",	&opt_ip_multicast_ttl)
@@ -1043,6 +1046,9 @@ const struct optname optionnames[] = {
 #endif
 #ifdef IP_MTU_DISCOVER
 	IF_IP     ("mtudiscover",	&opt_ip_mtu_discover)
+#endif
+#ifdef IPV6_MTU_DISCOVER
+	IF_IP     ("mtudiscover6",	&opt_ipv6_mtu_discover)
 #endif
 	IF_INTERFACE("multicast",	&opt_iff_multicast)
 	IF_IP     ("multicast-if",	&opt_ip_multicast_if)

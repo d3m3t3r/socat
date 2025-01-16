@@ -48,6 +48,9 @@ const struct optdesc opt_ip_recverr = { "ip-recverr", "recverr",   OPT_IP_RECVER
 #ifdef IP_MTU_DISCOVER
 const struct optdesc opt_ip_mtu_discover={"ip-mtu-discover","mtudiscover",OPT_IP_MTU_DISCOVER,GROUP_SOCK_IP,PH_PASTSOCKET,TYPE_INT,OFUNC_SOCKOPT,SOL_IP,IP_MTU_DISCOVER };
 #endif
+#ifdef IPV6_MTU_DISCOVER
+const struct optdesc opt_ipv6_mtu_discover={"ipv6-mtu-discover","mtudiscover6",OPT_IP_MTU_DISCOVER,GROUP_SOCK_IP,PH_PASTSOCKET,TYPE_INT,OFUNC_SOCKOPT,SOL_IPV6,IPV6_MTU_DISCOVER };
+#endif
 #ifdef IP_MTU
 const struct optdesc opt_ip_mtu     = { "ip-mtu",     "mtu",       OPT_IP_MTU,     GROUP_SOCK_IP, PH_PASTSOCKET, TYPE_INT, OFUNC_SOCKOPT, SOL_IP, IP_MTU };
 #endif
